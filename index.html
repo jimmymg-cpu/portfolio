@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James M. Giordano | Senior Sterling OMS Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#1e293b',
+                            900: '#0f172a',
+                        },
+                        primary: {
+                            400: '#38bdf8', // Light blue accent
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        /* Image styling */
+        .profile-image-container {
+            position: relative;
+            z-index: 10;
+        }
+        .profile-image-container::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            border-radius: 9999px; /* Circle */
+            z-index: -1;
+            opacity: 0.7;
+        }
+        @media (min-width: 768px) {
+             .profile-image-container::before {
+                border-radius: 1rem; /* Rounded rect on desktop if preferred, or keep circle */
+                border-radius: 50%; /* Keep circle for headshot look */
+             }
+             .profile-img {
+                 border-radius: 50%;
+             }
+        }
+        .profile-img {
+            object-fit: cover;
+            border-radius: 9999px;
+            border: 4px solid #0f172a;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 antialiased selection:bg-primary-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-800 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold text-white tracking-tight">
+                        James M. <span class="text-primary-400">Giordano</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-sm font-medium hover:text-primary-400 transition-colors">About</a>
+                    <a href="#experience" class="text-sm font-medium hover:text-primary-400 transition-colors">Experience</a>
+                    <a href="#skills" class="text-sm font-medium hover:text-primary-400 transition-colors">Skills</a>
+                    <a href="#projects" class="text-sm font-medium hover:text-primary-400 transition-colors">Projects</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-primary-400 transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-b border-slate-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 hover:text-white">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 hover:text-white">Experience</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 hover:text-white">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 hover:text-white">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12">
+        <div class="w-full md:w-3/5 text-center md:text-left mt-8 md:mt-0">
+            <div class="inline-flex items-center px-3 py-1 rounded-full border border-primary-500/30 bg-primary-500/10 text-primary-400 text-sm font-medium mb-6">
+                <span class="flex h-2 w-2 rounded-full bg-primary-400 mr-2 animate-pulse"></span>
+                Senior Sterling OMS Architect
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight mb-6 leading-tight">
+                Stabilizing & Scaling <br>
+                <span class="gradient-text">Global Retail Ecosystems</span>
+            </h1>
+            <p class="text-lg text-slate-400 mb-8 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                High-impact Solutions Architect combining 27 years of IT experience with deep expertise in the IBM Sterling Order Management lifecycle. I augment deep OMS expertise with modern AI methodologies to accelerate development and streamline analysis.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#experience" class="px-8 py-3 rounded-lg bg-primary-600 hover:bg-primary-500 text-white font-semibold transition-all shadow-lg shadow-primary-500/20">
+                    View Experience
+                </a>
+                <a href="#contact" class="px-8 py-3 rounded-lg border border-slate-600 hover:border-slate-500 hover:bg-slate-800 text-white font-semibold transition-all">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+        
+        <!-- Profile Image -->
+        <div class="w-full md:w-2/5 flex justify-center relative">
+             <div class="absolute -inset-4 bg-primary-500/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+             <div class="profile-image-container w-64 h-64 md:w-80 md:h-80">
+                 <!-- IMPORTANT: Ensure a file named YUP.jpg is in the same folder as this index.html -->
+                 <img src="YUP.jpg" alt="James M. Giordano" class="profile-img w-full h-full shadow-2xl">
+             </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Timeline) -->
+    <section id="experience" class="py-20 bg-slate-800/30">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-16 text-center">Professional <span class="text-primary-400">Experience</span></h2>
+            
+            <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
+                
+                <!-- Role 1: Cognizant -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 group-[.is-active]:border-primary-500 group-[.is-active]:bg-primary-600 text-slate-500 group-[.is-active]:text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm hover:border-primary-500/30 transition-colors">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                            <h3 class="font-bold text-white text-lg">Product Architect (ISG)</h3>
+                            <time class="text-xs font-medium text-primary-400 bg-primary-900/30 px-2 py-1 rounded">May 2022 – Present</time>
+                        </div>
+                        <div class="text-slate-300 font-medium text-sm mb-3">Cognizant | Valrico, FL</div>
+                        <ul class="text-slate-400 text-sm space-y-2 list-disc list-inside">
+                            <li>Orchestrated operational stability of critical Sterling OMS ecosystem using Apache JMeter and SQL scripting.</li>
+                            <li>Developed server-side scripts for critical workarounds and bottleneck resolution.</li>
+                            <li>Led cross-functional triage between operations and engineering using JIRA.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 2: Genesco -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fa-solid fa-code-branch"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm hover:border-primary-500/30 transition-colors">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                            <h3 class="font-bold text-white text-lg">Lead Programmer / Analyst</h3>
+                            <time class="text-xs font-medium text-slate-400 bg-slate-700/50 px-2 py-1 rounded">May 2014 – Apr 2022</time>
+                        </div>
+                        <div class="text-slate-300 font-medium text-sm mb-3">Genesco | Nashville, TN</div>
+                        <ul class="text-slate-400 text-sm space-y-2 list-disc list-inside">
+                            <li>Managed end-to-end IBM Sterling OMS ecosystem for 4 major retail brands (Journeys, Johnston & Murphy, etc.).</li>
+                            <li>Solely architected custom "Order Blacklist Application" achieving 100% stability.</li>
+                            <li>Spearheaded OMS v10.0 implementation and Web Call Center modernization.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 3: Northrop Grumman -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm hover:border-primary-500/30 transition-colors">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                            <h3 class="font-bold text-white text-lg">Java Developer</h3>
+                            <time class="text-xs font-medium text-slate-400 bg-slate-700/50 px-2 py-1 rounded">Aug 2013 – May 2014</time>
+                        </div>
+                        <div class="text-slate-300 font-medium text-sm mb-3">Northrop Grumman | Nashville, TN</div>
+                        <ul class="text-slate-400 text-sm space-y-2 list-disc list-inside">
+                            <li>Executed complex migration of healthcare system logic (Wyoming to TennCare).</li>
+                            <li>Utilized SoapUI for API testing and HQL queries to verify data integrity.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 4: Cutco -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm hover:border-primary-500/30 transition-colors">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                            <h3 class="font-bold text-white text-lg">Lead Web Programmer</h3>
+                            <time class="text-xs font-medium text-slate-400 bg-slate-700/50 px-2 py-1 rounded">Aug 2004 – Jul 2013</time>
+                        </div>
+                        <div class="text-slate-300 font-medium text-sm mb-3">Cutco | Olean, NY</div>
+                        <ul class="text-slate-400 text-sm space-y-2 list-disc list-inside">
+                            <li>Directed architecture of recruiting portals handling 2.5 million+ annual hits.</li>
+                            <li>Migrated legacy systems from Struts to Spring 3.1 / Hibernate 4.1.</li>
+                            <li>Architected "VectorLive" Java enterprise application.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">Technical <span class="text-primary-400">Expertise</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Skill Group 1: Core OMS -->
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-primary-500/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary-500/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-boxes-stacked text-primary-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Core OMS Architecture</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">IBM Sterling OMS (v9.x - v10.x)</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Global Inventory Visibility (GIV)</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Reverse Logistics</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Call Center</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">COM & DOM</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 2: Sterling Technical -->
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-primary-500/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-gears text-green-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Sterling Technical</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">SDF</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Custom API</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Agent Servers</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Integration Servers</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">User Exits</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">IBM MQ</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 3: Modernization & AI -->
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-primary-500/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-robot text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Modernization & AI</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Python (Automation)</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">GitHub Copilot</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Prompt Engineering</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Spring/Hibernate</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Angular</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">XML/XSLT</span>
+                    </div>
+                </div>
+
+                <!-- Skill Group 4: DB & Tools -->
+                <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-primary-500/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-database text-orange-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Databases & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Oracle</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">DB2</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">AppDynamics</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Kibana</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">JMeter</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">Docker/K8s</span>
+                        <span class="px-3 py-1 bg-slate-700 text-slate-300 rounded text-sm">JIRA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-slate-800/30 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-white mb-4">Featured <span class="text-primary-400">Projects</span></h2>
+            <p class="text-slate-400 max-w-2xl mx-auto">Selected works from my personal portfolio and enterprise architecture achievements.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Wealth Flow Card (Personal) -->
+            <div class="project-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition-all duration-300 flex flex-col">
+                <div class="h-48 bg-gradient-to-br from-slate-700 to-slate-900 relative flex items-center justify-center overflow-hidden group">
+                    <div class="absolute inset-0 bg-primary-600/10 group-hover:bg-primary-600/20 transition-colors"></div>
+                    <i class="fa-solid fa-chart-line text-6xl text-primary-400 opacity-50 transform group-hover:scale-110 transition-transform duration-500"></i>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">Wealth Flow App</h3>
+                        <span class="px-2 py-1 bg-green-500/10 text-green-400 text-xs rounded-full border border-green-500/20">Live</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 flex-1">
+                        A personal finance and wealth management application designed to track cash flow and visualize financial growth.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">React</span>
+                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Vercel</span>
+                    </div>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://jj-wealth.vercel.app/" target="_blank" class="flex-1 text-center px-4 py-2 bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium rounded-lg transition-colors">
+                            <i class="fa-solid fa-external-link-alt mr-2"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Blacklist App (Genesco) -->
+            <div class="project-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition-all duration-300 flex flex-col">
+                <div class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden group">
+                    <i class="fa-solid fa-ban text-6xl text-red-500 opacity-50"></i>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">Order Blacklist System</h3>
+                        <span class="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">Enterprise</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 flex-1">
+                        Architected and built a custom fraud prevention app to block fraudulent activities by region. Achieved 100% stability with zero reported issues.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Sterling OMS</span>
+                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Fraud Prevention</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VectorLive (Cutco) -->
+            <div class="project-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition-all duration-300 flex flex-col">
+                <div class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden group">
+                    <i class="fa-solid fa-users-viewfinder text-6xl text-orange-500 opacity-50"></i>
+                </div>
+                <div class="p-6 flex-1 flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">VectorLive Integration</h3>
+                        <span class="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">Enterprise</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 flex-1">
+                        Rewrote a third-party PHP system into an in-house Java enterprise standard to streamline the hiring workflow for a major retailer.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Java Enterprise</span>
+                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">System Integration</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Education -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Education</h4>
+                    <p class="text-slate-300 font-semibold">Bachelor of Science, Computer Science</p>
+                    <p class="text-slate-500 text-sm">SUNY Fredonia | 1997</p>
+                </div>
+                <!-- Patents -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Patents</h4>
+                    <p class="text-slate-300 font-semibold">Identity Verification Algorithm</p>
+                    <p class="text-slate-500 text-sm">WO2004114075A3</p>
+                    <p class="text-slate-500 text-xs mt-1">Co-owner of non-intrusive identity verification method.</p>
+                </div>
+                <!-- Certs -->
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Certifications</h4>
+                    <ul class="text-slate-400 text-sm space-y-1">
+                        <li>IBM Sterling OMS Specialist</li>
+                        <li>Agile Project Management (2022)</li>
+                        <li>ITIL Foundation (2018)</li>
+                        <li>Applied AI - Generative AI & Prompt Engineering (2024)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-white mb-6">Let's <span class="text-primary-400">Connect</span></h2>
+        <p class="text-slate-400 mb-10 text-lg">
+            I am available for new opportunities to leverage my deep Sterling OMS expertise and modern AI capabilities.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+            <a href="mailto:jimmymg@gmail.com" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold leading-6 text-white transition duration-150 ease-in-out bg-primary-600 border border-transparent rounded-lg hover:bg-primary-500 shadow-lg shadow-primary-500/30 w-full md:w-auto">
+                <i class="fa-regular fa-envelope mr-2"></i> jimmymg@gmail.com
+            </a>
+            <span class="text-slate-500 hidden md:block">|</span>
+            <div class="text-slate-300 text-lg">
+                <i class="fa-solid fa-location-dot mr-2 text-primary-400"></i> Valrico, FL
+            </div>
+            <span class="text-slate-500 hidden md:block">|</span>
+             <div class="text-slate-300 text-lg">
+                <i class="fa-solid fa-phone mr-2 text-primary-400"></i> 615-933-3546
+            </div>
+        </div>
+
+        <div class="mt-12 flex justify-center space-x-6">
+            <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <span class="sr-only">LinkedIn</span>
+                <i class="fa-brands fa-linkedin text-3xl"></i>
+            </a>
+            <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                <span class="sr-only">GitHub</span>
+                <i class="fa-brands fa-github text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-800 text-center bg-slate-900">
+        <p class="text-slate-500 text-sm">
+            © <script>document.write(new Date().getFullYear())</script> James M. Giordano.
+        </p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
