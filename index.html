@@ -60,7 +60,6 @@
         }
         @media (min-width: 768px) {
              .profile-image-container::before {
-                border-radius: 1rem; /* Rounded rect on desktop if preferred, or keep circle */
                 border-radius: 50%; /* Keep circle for headshot look */
              }
              .profile-img {
@@ -145,8 +144,7 @@
         <div class="w-full md:w-2/5 flex justify-center relative">
              <div class="absolute -inset-4 bg-primary-500/20 rounded-full blur-3xl opacity-30 animate-pulse"></div>
              <div class="profile-image-container w-64 h-64 md:w-80 md:h-80">
-                 <!-- IMPORTANT: Ensure a file named YUP.png is in the same folder as this index.html in GitHub -->
-                 <img src="YUP.png" alt="James M. Giordano" class="profile-img w-full h-full shadow-2xl">
+                 <img src="profile.png" alt="James M. Giordano" class="profile-img w-full h-full shadow-2xl">
              </div>
         </div>
     </section>
@@ -170,7 +168,7 @@
                         </div>
                         <div class="text-slate-300 font-medium text-sm mb-3">Cognizant | Valrico, FL</div>
                         <ul class="text-slate-400 text-sm space-y-2 list-disc list-inside">
-                            <li>Orchestrated operational stability of critical Sterling OMS ecosystem using Apache JMeter and SQL scripting.</li>
+                            <li>Orchestrated operational stability of critical Sterling Order Management ecosystem, utilizing Apache JMeter for performance profiling.</li>
                             <li>Developed server-side scripts for critical workarounds and bottleneck resolution.</li>
                             <li>Led cross-functional triage between operations and engineering using JIRA.</li>
                         </ul>
@@ -189,8 +187,8 @@
                         </div>
                         <div class="text-slate-300 font-medium text-sm mb-3">Genesco | Nashville, TN</div>
                         <ul class="text-slate-400 text-sm space-y-2 list-disc list-inside">
-                            <li>Managed end-to-end IBM Sterling OMS ecosystem for 4 major retail brands (Journeys, Johnston & Murphy, etc.).</li>
-                            <li>Solely architected custom "Order Blacklist Application" achieving 100% stability.</li>
+                            <li>Managed end-to-end IBM Sterling OMS ecosystem for 4 major retail brands.</li>
+                            <li>Architected custom "Order Blacklist Application" achieving 100% stability.</li>
                             <li>Spearheaded OMS v10.0 implementation and Web Call Center modernization.</li>
                         </ul>
                     </div>
@@ -226,10 +224,32 @@
                         </div>
                         <div class="text-slate-300 font-medium text-sm mb-3">Cutco | Olean, NY</div>
                         <ul class="text-slate-400 text-sm space-y-2 list-disc list-inside">
-                            <li>Directed architecture of recruiting portals handling 2.5 million+ annual hits.</li>
+                            <li>Directed architecture of recruiting portals handling 2.5M+ annual hits.</li>
                             <li>Migrated legacy systems from Struts to Spring 3.1 / Hibernate 4.1.</li>
                             <li>Architected "VectorLive" Java enterprise application.</li>
                         </ul>
+                    </div>
+                </div>
+
+                <!-- Time Gap Divider -->
+                <div class="relative flex items-center justify-center py-4">
+                    <div class="z-10 bg-slate-900 px-4 py-1 border border-slate-700 rounded-full text-[10px] font-bold tracking-[0.3em] text-slate-500 uppercase">
+                        Early Career
+                    </div>
+                </div>
+
+                <!-- Role 5: Lockheed Martin (Foundation) -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-slate-800 text-slate-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-slate-800/50 p-6 rounded-xl border border-slate-700 border-dashed hover:border-primary-500/30 transition-colors">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
+                            <h3 class="font-bold text-white text-lg">Programmer</h3>
+                            <time class="text-xs font-medium text-slate-400 bg-slate-700/30 px-2 py-1 rounded">1998 – 1999</time>
+                        </div>
+                        <div class="text-slate-400 font-medium text-sm mb-1">Lockheed Martin</div>
+                        <p class="text-slate-500 text-xs italic">The career foundation where it all started.</p>
                     </div>
                 </div>
 
@@ -243,7 +263,6 @@
             <h2 class="text-3xl font-bold text-white mb-12 text-center">Technical <span class="text-primary-400">Expertise</span></h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
                 <!-- Skill Group 1: Core OMS -->
                 <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 hover:border-primary-500/50 transition-colors">
                     <div class="flex items-center mb-4">
@@ -327,8 +346,7 @@
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Wealth Flow Card (Personal) -->
+            <!-- Wealth Flow Card -->
             <div class="project-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition-all duration-300 flex flex-col">
                 <div class="h-48 bg-gradient-to-br from-slate-700 to-slate-900 relative flex items-center justify-center overflow-hidden group">
                     <div class="absolute inset-0 bg-primary-600/10 group-hover:bg-primary-600/20 transition-colors"></div>
@@ -354,7 +372,7 @@
                 </div>
             </div>
 
-            <!-- Order Blacklist App (Genesco) -->
+            <!-- Order Blacklist App -->
             <div class="project-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition-all duration-300 flex flex-col">
                 <div class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden group">
                     <i class="fa-solid fa-ban text-6xl text-red-500 opacity-50"></i>
@@ -365,16 +383,16 @@
                         <span class="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">Enterprise</span>
                     </div>
                     <p class="text-slate-400 text-sm mb-6 flex-1">
-                        Architected and built a custom fraud prevention app to block fraudulent activities by region. Achieved 100% stability with zero reported issues.
+                        Architected custom fraud prevention app to block fraudulent activities by region. 100% stability.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Sterling OMS</span>
-                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Fraud Prevention</span>
+                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Security</span>
                     </div>
                 </div>
             </div>
 
-            <!-- VectorLive (Cutco) -->
+            <!-- VectorLive -->
             <div class="project-card bg-slate-800 rounded-xl overflow-hidden border border-slate-700 transition-all duration-300 flex flex-col">
                 <div class="h-48 bg-slate-900 relative flex items-center justify-center overflow-hidden group">
                     <i class="fa-solid fa-users-viewfinder text-6xl text-orange-500 opacity-50"></i>
@@ -385,15 +403,14 @@
                         <span class="px-2 py-1 bg-blue-500/10 text-blue-400 text-xs rounded-full border border-blue-500/20">Enterprise</span>
                     </div>
                     <p class="text-slate-400 text-sm mb-6 flex-1">
-                        Rewrote a third-party PHP system into an in-house Java enterprise standard to streamline the hiring workflow for a major retailer.
+                        Rewrote third-party system into an in-house Java enterprise standard for recruitment workflow.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Java Enterprise</span>
-                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">System Integration</span>
+                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Java J2EE</span>
+                        <span class="text-xs px-2 py-1 rounded bg-slate-700 text-slate-300">Scalability</span>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -412,7 +429,6 @@
                     <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Patents</h4>
                     <p class="text-slate-300 font-semibold">Identity Verification Algorithm</p>
                     <p class="text-slate-500 text-sm">WO2004114075A3</p>
-                    <p class="text-slate-500 text-xs mt-1">Co-owner of non-intrusive identity verification method.</p>
                 </div>
                 <!-- Certs -->
                 <div>
@@ -421,7 +437,7 @@
                         <li>IBM Sterling OMS Specialist</li>
                         <li>Agile Project Management (2022)</li>
                         <li>ITIL Foundation (2018)</li>
-                        <li>Applied AI - Generative AI & Prompt Engineering (2024)</li>
+                        <li>Applied AI (2024)</li>
                     </ul>
                 </div>
             </div>
@@ -467,20 +483,12 @@
         </p>
     </footer>
 
-    <!-- Mobile Menu Script -->
     <script>
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        // Close menu when clicking a link
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
         document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
+            link.addEventListener('click', () => { menu.classList.add('hidden'); });
         });
     </script>
 </body>
